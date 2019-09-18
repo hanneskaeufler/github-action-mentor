@@ -8,7 +8,7 @@ async function run() {
 
   console.log(event);
 
-  const file = fs.readFileSync(event);
+  const file = fs.readFileSync(event, { encoding: 'UTF-8' });
   console.log(file);
 
   console.log(api.pulls.get({
