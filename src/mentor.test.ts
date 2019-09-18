@@ -28,7 +28,7 @@ describe('#mentor', () => {
 
   it('doesnt comment a second time if there is already a mentor comment', async () => {
     const api = mockApi();
-    api.issues.listComments.mockReturnValueOnce([{ body: 'by mentor', user: { login: 'github-action' } }]);
+    api.issues.listComments.mockReturnValueOnce([{ body: 'by mentor', user: { login: 'github-actions' } }]);
 
     await mentor(api, sampleEvent);
 
@@ -42,9 +42,6 @@ describe('#mentor', () => {
     await mentor(api, sampleEvent);
 
     expect(api.issues.createComment).toHaveBeenCalled();
-  });
-
-  it('comments with a mentor tip', async () => {
   });
 
   it('errors when the github webhook payload is not found', async () => {

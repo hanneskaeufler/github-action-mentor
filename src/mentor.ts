@@ -31,7 +31,7 @@ function oneOfCommentsIsByMentor(comments) {
 }
 
 function commentIsByMentor(comment) {
-  return comment['user']['login'] == 'github-action' && /by mentor/.test(comment['body']);
+  return comment['user']['login'] == 'github-actions' && /by mentor/.test(comment['body']);
 }
 
 async function postComment(api, event) {
