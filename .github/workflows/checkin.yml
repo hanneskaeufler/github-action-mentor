@@ -27,3 +27,5 @@ jobs:
     - uses: hanneskaeufler/github-action-mentor@release/v1
       with:
         githubToken: ${{ secrets.GITHUB_TOKEN }}
+        tags:
+          - testing
