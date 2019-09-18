@@ -1,8 +1,7 @@
 {
-  "name": "javascript-template-action",
-  "version": "0.0.0",
-  "private": true,
-  "description": "JavaScript template action",
+  "name": "github-action-mentor",
+  "version": "0.0.1",
+  "description": "Level up your programming skills",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -17,10 +16,11 @@
     "node",
     "setup"
   ],
-  "author": "YourNameOrOrganization",
+  "author": "Hannes Käufler",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.0.0"
+    "@actions/core": "^1.0.0",
+    "@actions/github": "^1.1.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",

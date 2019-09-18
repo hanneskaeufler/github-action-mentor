@@ -1,3 +1,5 @@
-describe('TODO - Add a test suite', () => {
-  it('TODO - Add a test', async () => {});
+describe('#run', () => {
+  it('posts a comment to the github pr', async () => {
+    run();
+  });
 });
