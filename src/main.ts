@@ -12,16 +12,17 @@ async function run() {
     )
   );
 
-  api.pulls.get({
+  api.issues.createComment({
     owner: event['repository']['owner']['login'],
     repo: event['repository']['name'],
-    pull_number: event['number'],
+    issue_number: event['number'],
+    body: 'Dude, a comment',
   })
   .then((pull) => {
     console.log(pull);
   })
   .catch((err) => {
-    console.log('did not find pull ' + err);
+    console.log('commenting failed' + err);
   });
 }
 
