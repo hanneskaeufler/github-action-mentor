@@ -44,9 +44,6 @@ describe('#mentor', () => {
     expect(api.issues.createComment).toHaveBeenCalled();
   });
 
-  it('comments with a mentor tip', async () => {
-  });
-
   it('errors when the github webhook payload is not found', async () => {
   });
 
