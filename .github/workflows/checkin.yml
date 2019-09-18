@@ -24,6 +24,6 @@ jobs:
                  "and check in all changes" \
             && exit 1)
 
-    - uses: hanneskaeufler/github-action-mentor@release/v1
+    - uses: hanneskaeufler/github-action-mentor@v0.1.0
       with:
         githubToken: ${{ secrets.GITHUB_TOKEN }}
