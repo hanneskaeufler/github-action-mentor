@@ -23,3 +23,7 @@ jobs:
         || (echo "##[error] found changed files after build. please 'npm run build && npm run format'" \
                  "and check in all changes" \
             && exit 1)
+
+    - uses: hanneskaeufler/github-action-mentor@release/v1
+      with:
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
