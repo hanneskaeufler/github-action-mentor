@@ -7,16 +7,16 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: "npm ci"
+    - name: "Install npm dependencies"
       run: npm ci
 
-    - name: "npm run build"
-      run: npm run build
-
-    - name: "npm run test"
+    - name: "Run tests"
       run: npm run test
 
-    - name: "check for uncommitted changes"
+    - name: "Generate production code"
+      run: npm run build
+
+    - name: "Check for uncommitted changes"
       # Ensure no changes, but ignore node_modules dir since dev/fresh ci deps installed.
       run: |
         git diff --exit-code --stat -- . ':!node_modules' \
