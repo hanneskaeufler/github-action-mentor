@@ -5,7 +5,7 @@ describe('#mentor', () => {
     const api = { issues: { createComment: jest.fn() } };
     const event = { number: 1337, repository: { name: 'repo', owner: { login: 'owner'} } };
 
-    mentor(api, event);
+    await mentor(api, event);
 
     expect(api.issues.createComment).toHaveBeenCalledWith({
       owner: 'owner',
