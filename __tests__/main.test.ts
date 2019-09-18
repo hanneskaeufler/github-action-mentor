@@ -4,4 +4,7 @@ describe('#run', () => {
 
   it('comments with a mentor tip', async () => {
   });
+
+  it('errors when the github webhook payload is not found', async () => {
+  });
 });
