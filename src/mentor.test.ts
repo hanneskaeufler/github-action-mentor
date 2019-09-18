@@ -22,7 +22,7 @@ describe('#mentor', () => {
       owner: 'owner',
       repo: 'repo',
       issue_number: 1337,
-      body: expect.stringContaining("mentor"),
+      body: expect.stringContaining("by mentor"),
     });
   });
 

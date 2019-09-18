@@ -37,6 +37,6 @@ function commentIsByMentor(comment) {
 async function postComment(api, event) {
   await api.issues.createComment({
     ...issueParams(event),
-    body: 'Dude, a comment (mentor)',
+    body: 'Dude, a comment (by mentor)',
   })
 }
