@@ -5,7 +5,9 @@
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --check 'src/**/*.ts'",
+    "prettier": "prettier --write 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -30,5 +32,11 @@
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.1"
+  },
+  "prettier": {
+      "parser": "typescript",
+      "semi": false,
+      "printWidth": 120,
+      "trailingComma": "es5"
   }
 }
