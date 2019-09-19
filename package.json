@@ -1,6 +1,6 @@
 {
   "name": "github-action-mentor",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Level up your programming skills",
   "main": "lib/main.js",
   "scripts": {
