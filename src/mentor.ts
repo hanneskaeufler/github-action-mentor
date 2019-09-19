@@ -1,4 +1,4 @@
-const MENTOR_COMMENT_IDENTIFICATION = /<p data-source="mentor">/
+const MENTOR_COMMENT_IDENTIFICATION = /Posted by <a href="#">Mentor<\/a>/
 
 export default async function mentor(api, event) {
   if (await hasAlreadyCommented(api, event)) {
@@ -17,7 +17,7 @@ async function hasAlreadyCommented(api, event): Promise<Boolean> {
 async function postComment(api, event) {
   await api.issues.createComment({
     ...issueParams(event),
-    body: '<p data-source="mentor">👩🏾‍🏫 Dude, a comment</p>',
+    body: '<p align="right">👩🏾‍🏫 Posted by <a href="#">Mentor</a></p>',
   })
 }
 
