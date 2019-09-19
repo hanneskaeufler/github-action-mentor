@@ -40,7 +40,7 @@ describe("#mentor", () => {
     expect(api.issues.createComment).not.toHaveBeenCalled()
   })
 
-  it("posts if none of the comment is by mentor", async () => {
+  it("posts if none of the comments are by mentor", async () => {
     const api = mockApi()
     api.issues.listComments.mockResolvedValueOnce({
       data: [{ body: "whatever", user: { login: "someone" } }],
