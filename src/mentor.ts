@@ -11,7 +11,6 @@ export default async function mentor(api, event) {
 
 async function hasAlreadyCommented(api, event): Promise<Boolean> {
   const response = await api.issues.listComments(issueParams(event))
-  console.log(response)
 
   return response.data.length > 0 && oneOfCommentsIsByMentor(response.data)
 }
