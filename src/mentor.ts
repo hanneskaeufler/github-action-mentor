@@ -1,11 +1,12 @@
 const MENTOR_COMMENT_IDENTIFICATION = /Posted by <a href="#">Mentor<\/a>/
+const SIGNATURE = '<p align="right">👩🏾‍🏫 Posted by <a href="#">Mentor</a></p>'
 
 export default async function mentor(api, event) {
   if (await hasAlreadyCommented(api, event)) {
     return
   }
 
-  await postComment(api, event)
+  await postRandomTipComment(api, event)
 }
 
 async function hasAlreadyCommented(api, event): Promise<Boolean> {
@@ -14,10 +15,12 @@ async function hasAlreadyCommented(api, event): Promise<Boolean> {
   return response.data.length > 0 && oneOfCommentsIsByMentor(response.data)
 }
 
-async function postComment(api, event) {
+async function postRandomTipComment(api, event) {
+  const tip = "Something clever."
   await api.issues.createComment({
     ...issueParams(event),
-    body: '<p align="right">👩🏾‍🏫 Posted by <a href="#">Mentor</a></p>',
+    body: `${tip}
+    ${SIGNATURE}`,
   })
 }
 
