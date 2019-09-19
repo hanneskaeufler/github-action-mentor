@@ -1,3 +1,5 @@
+const GITHUB_ACTIONS_USERNAME = 'github-actions';
+
 export default async function mentor(api, event) {
   if (await hasAlreadyCommented(api, event)) {
     return;
@@ -32,7 +34,7 @@ function oneOfCommentsIsByMentor(comments) {
 }
 
 function commentIsByMentor(comment) {
-  return comment['user']['login'] == 'github-actions' && /by mentor/.test(comment['body']);
+  return comment['user']['login'] == GITHUB_ACTIONS_USERNAME && /by mentor/.test(comment['body']);
 }
 
 async function postComment(api, event) {
