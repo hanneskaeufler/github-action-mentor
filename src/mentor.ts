@@ -1,3 +1,6 @@
+import AllTips from "./all_tips"
+import RandomTip from "./random_tip"
+
 const MENTOR_COMMENT_IDENTIFICATION = /Posted by <a href="#">Mentor<\/a>/
 const SIGNATURE =
   '<p align="right">👩🏾‍🏫 Posted by <a href="https://github.com/hanneskaeufler/github-action-mentor">Mentor</a></p>'
@@ -17,10 +20,9 @@ async function hasAlreadyCommented(api, event): Promise<Boolean> {
 }
 
 async function postRandomTipComment(api, event) {
-  const tip = "Include mentor here"
   await api.issues.createComment({
     ...issueParams(event),
-    body: `${tip}
+    body: `${RandomTip(AllTips(), []).toMarkdown()}
     ${SIGNATURE}`,
   })
 }

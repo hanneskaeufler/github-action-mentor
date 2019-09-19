@@ -1,4 +1,4 @@
-import { default as mentor } from "./mentor"
+import mentor from "./mentor"
 
 const mockApi = () => {
   return {
