@@ -17,7 +17,7 @@ async function hasAlreadyCommented(api, event): Promise<Boolean> {
 async function postComment(api, event) {
   await api.issues.createComment({
     ...issueParams(event),
-    body: '<p data-source="mentor">Dude, a comment</p>',
+    body: '<p data-source="mentor">👩🏾‍🏫 Dude, a comment</p>',
   })
 }
 
