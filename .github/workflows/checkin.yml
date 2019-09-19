@@ -10,6 +10,9 @@ jobs:
     - name: "Install npm dependencies"
       run: npm ci
 
+    - name: "Check formatting"
+      run: npm run format
+
     - name: "Run tests"
       run: npm run test
 
