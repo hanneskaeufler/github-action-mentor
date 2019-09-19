@@ -32,7 +32,7 @@ describe("#mentor", () => {
   it("doesnt comment a second time if there is already a mentor comment", async () => {
     const api = mockApi()
     api.issues.listComments.mockResolvedValueOnce({
-      data: [{ body: "by mentor", user: { login: "github-actions[bot]" } }],
+      data: [{ body: '<p data-source="mentor">Hi there</p>' }],
     })
 
     await mentor(api, sampleEvent)
@@ -43,7 +43,7 @@ describe("#mentor", () => {
   it("posts if none of the comments are by mentor", async () => {
     const api = mockApi()
     api.issues.listComments.mockResolvedValueOnce({
-      data: [{ body: "whatever", user: { login: "someone" } }],
+      data: [{ body: "whatever" }],
     })
 
     await mentor(api, sampleEvent)
