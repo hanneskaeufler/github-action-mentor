@@ -25,14 +25,14 @@ describe("#mentor", () => {
       owner: "owner",
       repo: "repo",
       issue_number: 1337,
-      body: expect.stringContaining('<p data-source="mentor">'),
+      body: expect.stringContaining('Posted by <a href="#">Mentor</a>'),
     })
   })
 
   it("doesnt comment a second time if there is already a mentor comment", async () => {
     const api = mockApi()
     api.issues.listComments.mockResolvedValueOnce({
-      data: [{ body: '<p data-source="mentor">Hi there</p>' }],
+      data: [{ body: '<p>Posted by <a href="#">Mentor</a></p>' }],
     })
 
     await mentor(api, sampleEvent)
