@@ -4,7 +4,7 @@ logs
 npm-debug.log*
 
 # Dependency directories
-node_modules/
+!node_modules/
 
 # TypeScript v1 declaration files
 typings/
@@ -15,4 +15,4 @@ typings/
 # Optional npm cache directory
 .npm
 
-lib/
+!lib/
