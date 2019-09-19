@@ -1,4 +1,4 @@
-const GITHUB_ACTIONS_USERNAME = "github-actions"
+const GITHUB_ACTIONS_USERNAME = "github-actions[bot]"
 
 export default async function mentor(api, event) {
   if (await hasAlreadyCommented(api, event)) {
