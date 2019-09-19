@@ -1,4 +1,5 @@
 const GITHUB_ACTIONS_USERNAME = "github-actions[bot]"
+const MENTOR_COMMENT_IDENTIFICATION = /by mentor/
 
 export default async function mentor(api, event) {
   if (await hasAlreadyCommented(api, event)) {
@@ -9,10 +10,10 @@ export default async function mentor(api, event) {
 }
 
 async function hasAlreadyCommented(api, event): Promise<Boolean> {
-  const comments = await api.issues.listComments(issueParams(event))
-  console.log(comments)
+  const response = await api.issues.listComments(issueParams(event))
+  console.log(response)
 
-  return comments.length > 0 && oneOfCommentsIsByMentor(comments)
+  return response.data.length > 0 && oneOfCommentsIsByMentor(response.data)
 }
 
 async function postComment(api, event) {
@@ -43,5 +44,8 @@ function oneOfCommentsIsByMentor(comments): Boolean {
 }
 
 function commentIsByMentor(comment): Boolean {
-  return comment["user"]["login"] == GITHUB_ACTIONS_USERNAME && /by mentor/.test(comment["body"])
+  return (
+    comment["user"]["login"] == GITHUB_ACTIONS_USERNAME &&
+    MENTOR_COMMENT_IDENTIFICATION.test(comment["body"])
+  )
 }

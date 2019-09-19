@@ -36,7 +36,7 @@
   "prettier": {
     "parser": "typescript",
     "semi": false,
-    "printWidth": 120,
+    "printWidth": 100,
     "trailingComma": "es5"
   }
 }
