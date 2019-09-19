@@ -25,7 +25,9 @@ describe("#mentor", () => {
       owner: "owner",
       repo: "repo",
       issue_number: 1337,
-      body: expect.stringContaining('Posted by <a href="#">Mentor</a>'),
+      body: expect.stringContaining(
+        'Posted by <a href="https://github.com/hanneskaeufler/github-action-mentor">Mentor</a>'
+      ),
     })
   })
 
