@@ -8,6 +8,20 @@ export default async function mentor(api, event) {
   await postComment(api, event)
 }
 
+async function hasAlreadyCommented(api, event) : Promise<Boolean> {
+  const comments = await api.issues.listComments(issueParams(event))
+  console.log(comments)
+
+  return comments.length > 0 && oneOfCommentsIsByMentor(comments)
+}
+
+async function postComment(api, event) {
+  await api.issues.createComment({
+    ...issueParams(event),
+    body: "Dude, a comment (by mentor)",
+  })
+}
+
 function issueParams(event) {
   return {
     owner: event["repository"]["owner"]["login"],
@@ -16,30 +30,18 @@ function issueParams(event) {
   }
 }
 
-async function hasAlreadyCommented(api, event) {
-  const comments = await api.issues.listComments(issueParams(event))
-
-  return comments.length > 0 && oneOfCommentsIsByMentor(comments)
-}
-
-function oneOfCommentsIsByMentor(comments) {
+function oneOfCommentsIsByMentor(comments) : Boolean {
   for (let i = 0; i < comments.length; i++) {
     const comment = comments[i]
-    console.log(comment)
 
     if (commentIsByMentor(comment)) {
       return true
     }
   }
+
+  return false
 }
 
-function commentIsByMentor(comment) {
+function commentIsByMentor(comment) : Boolean {
   return comment["user"]["login"] == GITHUB_ACTIONS_USERNAME && /by mentor/.test(comment["body"])
-}
-
-async function postComment(api, event) {
-  await api.issues.createComment({
-    ...issueParams(event),
-    body: "Dude, a comment (by mentor)",
-  })
 }
