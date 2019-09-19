@@ -25,7 +25,7 @@ describe("#mentor", () => {
       owner: "owner",
       repo: "repo",
       issue_number: 1337,
-      body: expect.stringContaining("by mentor"),
+      body: expect.stringContaining('<p data-source="mentor">'),
     })
   })
 
