@@ -27,7 +27,7 @@ jobs:
                  "and check in all changes" \
             && exit 1)
 
-    - uses: hanneskaeufler/github-action-mentor@v0.3.1
+    - uses: hanneskaeufler/github-action-mentor@v1.0.0
       if: github.event_name == 'pull_request'
       with:
         githubToken: ${{ secrets.GITHUB_TOKEN }}
