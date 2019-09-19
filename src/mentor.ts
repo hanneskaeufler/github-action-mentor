@@ -23,6 +23,7 @@ async function hasAlreadyCommented(api, event) {
 function oneOfCommentsIsByMentor(comments) {
   for (let i = 0; i < comments.length; i++) {
     const comment = comments[i];
+    console.log(comment);
 
     if (commentIsByMentor(comment)) {
       return true;
