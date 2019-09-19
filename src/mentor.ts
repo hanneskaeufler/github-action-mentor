@@ -1,4 +1,5 @@
 const GITHUB_ACTIONS_USERNAME = "github-actions[bot]"
+const MENTOR_COMMENT_IDENTIFICATION = /by mentor/
 
 export default async function mentor(api, event) {
   if (await hasAlreadyCommented(api, event)) {
@@ -43,5 +44,8 @@ function oneOfCommentsIsByMentor(comments): Boolean {
 }
 
 function commentIsByMentor(comment): Boolean {
-  return comment["user"]["login"] == GITHUB_ACTIONS_USERNAME && /by mentor/.test(comment["body"])
+  return (
+    comment["user"]["login"] == GITHUB_ACTIONS_USERNAME &&
+    MENTOR_COMMENT_IDENTIFICATION.test(comment["body"])
+  )
 }

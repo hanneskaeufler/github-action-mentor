@@ -31,7 +31,9 @@ describe("#mentor", () => {
 
   it("doesnt comment a second time if there is already a mentor comment", async () => {
     const api = mockApi()
-    api.issues.listComments.mockReturnValueOnce([{ body: "by mentor", user: { login: "github-actions[bot]" } }])
+    api.issues.listComments.mockReturnValueOnce([
+      { body: "by mentor", user: { login: "github-actions[bot]" } },
+    ])
 
     await mentor(api, sampleEvent)
 
