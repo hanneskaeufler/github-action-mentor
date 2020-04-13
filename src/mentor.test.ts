@@ -58,7 +58,7 @@ describe("#mentor", () => {
     expect(api.issues.createComment).toHaveBeenCalled()
   })
 
-  it("errors when the github webhook payload is not found", async () => {})
+  xit("errors when the github webhook payload is not found", async () => {})
 
-  it("only comments with tips for the given tags", async () => {})
+  xit("only comments with tips for the given tags", async () => {})
 })
