@@ -31,10 +31,15 @@ describe("#mentor", () => {
     })
   })
 
-  it("doesnt comment a second time if there is already a mentor comment", async () => {
+  it("doesn't comment a second time if there is already a mentor comment", async () => {
     const api = mockApi()
     api.issues.listComments.mockResolvedValueOnce({
-      data: [{ body: '<p>Posted by <a href="#">Mentor</a></p>' }],
+      data: [
+        {
+          body:
+            '<p align="right">👩🏾‍🏫 Posted by <a href="https://github.com/hanneskaeufler/github-action-mentor">Mentor</a></p>',
+        },
+      ],
     })
 
     await mentor(api, sampleEvent)
@@ -53,7 +58,7 @@ describe("#mentor", () => {
     expect(api.issues.createComment).toHaveBeenCalled()
   })
 
-  it("errors when the github webhook payload is not found", async () => {})
+  xit("errors when the github webhook payload is not found", async () => {})
 
-  it("only comments with tips for the given tags", async () => {})
+  xit("only comments with tips for the given tags", async () => {})
 })
