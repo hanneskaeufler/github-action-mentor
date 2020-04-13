@@ -1,7 +1,7 @@
 import AllTips from "./all_tips"
 import RandomTip from "./random_tip"
 
-const MENTOR_COMMENT_IDENTIFICATION = /Posted by <a href="#">Mentor<\/a>/
+const MENTOR_COMMENT_IDENTIFICATION = /Posted by.+Mentor/
 const SIGNATURE =
   '<p align="right">👩🏾‍🏫 Posted by <a href="https://github.com/hanneskaeufler/github-action-mentor">Mentor</a></p>'
 
