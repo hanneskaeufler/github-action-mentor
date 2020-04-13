@@ -3,4 +3,4 @@ description: 'Level up your programming skills'
 author: 'Hannes Käufler'
 runs:
   using: 'node12'
-  main: 'lib/main.js'
+  main: 'dist/main.js'
