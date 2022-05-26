@@ -36,8 +36,7 @@ describe("#mentor", () => {
     api.issues.listComments.mockResolvedValueOnce({
       data: [
         {
-          body:
-            '<p align="right">👩🏾‍🏫 Posted by <a href="https://github.com/hanneskaeufler/github-action-mentor">Mentor</a></p>',
+          body: '<p align="right">👩🏾‍🏫 Posted by <a href="https://github.com/hanneskaeufler/github-action-mentor">Mentor</a></p>',
         },
       ],
     })
