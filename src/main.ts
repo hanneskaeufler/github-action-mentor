@@ -8,7 +8,7 @@ async function run() {
 
   const event = JSON.parse(
     fs.readFileSync(process.env["GITHUB_EVENT_PATH"] || "", {
-      encoding: "UTF-8",
+      encoding: "utf-8",
     })
   )
 
