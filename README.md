@@ -9,7 +9,7 @@
 In your workflow file, use mentor e.g. like:
 
 ```yml
-    - uses: hanneskaeufler/github-action-mentor@v1.0.0
+    - uses: hanneskaeufler/github-action-mentor@v1.0.2
       if: github.event_name == 'pull_request'
       with:
         githubToken: ${{ secrets.GITHUB_TOKEN }}
