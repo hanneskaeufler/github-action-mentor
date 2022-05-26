@@ -24,6 +24,6 @@ export class MentorTip implements Tip {
   }
 
   hasAnyTag(tags: string[]): boolean {
-    return this.tags.filter(tag => tags.indexOf(tag) !== -1).length > 0
+    return this.tags.filter((tag) => tags.indexOf(tag) !== -1).length > 0
   }
 }

@@ -8,7 +8,7 @@ export default class NoTip implements Tip {
   }
 
   toMarkdown(): string {
-    const tags = this.tags.map(tag => `"${tag}"`).join(", ")
+    const tags = this.tags.map((tag) => `"${tag}"`).join(", ")
 
     return `danger-plugin-mentor: No tip found for tags: ${tags}.`
   }
