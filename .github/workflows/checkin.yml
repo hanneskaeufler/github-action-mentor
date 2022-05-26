@@ -5,29 +5,29 @@ jobs:
   check_pr:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
 
-    - name: "Install npm dependencies"
-      run: npm ci
+      - name: "Install npm dependencies"
+        run: npm ci
 
-    - name: "Check formatting"
-      run: npm run format
+      - name: "Check formatting"
+        run: npm run format
 
-    - name: "Run tests"
-      run: npm run test
+      - name: "Run tests"
+        run: npm run test
 
-    - name: "Generate production code"
-      run: npm run build
+      - name: "Generate production code"
+        run: npm run build
 
-    - name: "Check for uncommitted changes"
-      # Ensure no changes, but ignore node_modules dir since dev/fresh ci deps installed.
-      run: |
-        git diff --exit-code --stat -- . ':!node_modules' \
-        || (echo "##[error] found changed files after build. please 'npm run build && npm run format'" \
-                 "and check in all changes" \
-            && exit 1)
+      - name: "Check for uncommitted changes"
+        # Ensure no changes, but ignore node_modules dir since dev/fresh ci deps installed.
+        run: |
+          git diff --exit-code --stat -- . ':!node_modules' \
+          || (echo "##[error] found changed files after build. please 'npm run build && npm run format'" \
+                   "and check in all changes" \
+              && exit 1)
 
-    - uses: hanneskaeufler/github-action-mentor@v1.0.2
-      if: github.event_name == 'pull_request'
-      with:
-        githubToken: ${{ secrets.GITHUB_TOKEN }}
+      - uses: hanneskaeufler/github-action-mentor@v1.0.1
+        if: github.event_name == 'pull_request'
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
