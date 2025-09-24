@@ -4,7 +4,7 @@ import * as fs from "fs"
 import { default as mentor } from "./mentor"
 
 async function run() {
-  const api = github.getOctokit(core.getInput("githubToken", { required: true }))
+  const api = github.getOctokit(core.getInput("githubToken", { required: true })).rest
 
   const event = JSON.parse(
     fs.readFileSync(process.env["GITHUB_EVENT_PATH"] || "", {
