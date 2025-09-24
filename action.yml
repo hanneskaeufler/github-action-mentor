@@ -1,6 +1,10 @@
 name: 'Mentor'
 description: 'Level up your programming skills'
 author: 'Hannes Käufler'
+inputs:
+  githubToken:
+    description: 'GitHub token for API access'
+    required: true
 runs:
-  using: 'node12'
+  using: 'node20'
   main: 'dist/index.js'
