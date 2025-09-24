@@ -1,5 +1,7 @@
 name: "PR Checks"
 on: [pull_request, push]
+permissions:
+  pull-requests: write
 
 jobs:
   check_pr:
