@@ -83,7 +83,7 @@ const fs = __importStar(__nccwpck_require__(9896));
 const mentor_1 = __importDefault(__nccwpck_require__(9847));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        const api = github.getOctokit(core.getInput("githubToken", { required: true }));
+        const api = github.getOctokit(core.getInput("githubToken", { required: true })).rest;
         const event = JSON.parse(fs.readFileSync(process.env["GITHUB_EVENT_PATH"] || "", {
             encoding: "utf-8",
         }));
