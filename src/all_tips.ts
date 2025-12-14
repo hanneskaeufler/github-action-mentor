@@ -42,7 +42,7 @@ export default function AllTips(): Tip[] {
     ),
     new MentorTip(
       "Be nice. We are all trying to do our best work.",
-      new URL("https://www.npmjs.com/package/danger-plugin-mentor"),
+      new URL("https://github.com/hanneskaeufler/github-action-mentor/tree/master"),
       ["non-technical"]
     ),
     new MentorTip(
@@ -84,6 +84,11 @@ export default function AllTips(): Tip[] {
       "A parser generator is an application which generates a parser. Sometimes also called a 'compiler compiler'.",
       new URL("https://wiki.tcl-lang.org/page/parser+generator"),
       ["computer-science"]
+    ),
+    new MentorTip(
+      "Fuzz testing is an automated software testing technique that identifies bugs and security vulnerabilities by feeding a program with large amounts of invalid, unexpected, or random data. This process is often called 'fuzzing'. It aims to crash the system or trigger errors to find weaknesses that might be missed by traditional testing methods. It is particularly effective at uncovering issues like buffer overflows and code injection. ",
+      new URL("https://en.wikipedia.org/wiki/Fuzzing"),
+      ["testing"]
     ),
   ]
 }
