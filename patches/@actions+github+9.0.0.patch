@@ -1,0 +1,20 @@
+diff --git a/node_modules/@actions/github/package.json b/node_modules/@actions/github/package.json
+index 1234567..abcdefg 100644
+--- a/node_modules/@actions/github/package.json
++++ b/node_modules/@actions/github/package.json
+@@ -15,11 +15,13 @@
+   "exports": {
+     ".": {
+       "types": "./lib/github.d.ts",
+-      "import": "./lib/github.js"
++      "import": "./lib/github.js",
++      "require": "./lib/github.js"
+     },
+     "./lib/utils": {
+       "types": "./lib/utils.d.ts",
+-      "import": "./lib/utils.js"
++      "import": "./lib/utils.js",
++      "require": "./lib/utils.js"
+     }
+   },
+   "directories": {
