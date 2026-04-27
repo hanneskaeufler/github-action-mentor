@@ -22,7 +22,7 @@
   "author": "Hannes Käufler",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^3.0.0",
+    "@actions/core": "^3.0.1",
     "@actions/github": "^6.0.1"
   },
   "devDependencies": {
